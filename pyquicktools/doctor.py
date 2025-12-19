@@ -4,10 +4,10 @@ def run_doctor():
     import platform
     import requests
 
-    print("🩺 smartutils doctor report\n")
+    print("🩺 pyquicktools doctor report\n")
 
     print(f"✔ Python version: {platform.python_version()}")
-    print(f"✔ SMARTUTILS_LOG: {'ON' if os.getenv('SMARTUTILS_LOG', '1') == '1' else 'OFF'}")
+    print(f"✔ PYQUICKTOOLS_LOG: {'ON' if os.getenv('PYQUICKTOOLS_LOG', '1') == '1' else 'OFF'}")
 
     try:
         import requests

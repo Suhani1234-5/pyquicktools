@@ -1,4 +1,4 @@
-from smartutils import load_json
+from pyquicktools import load_json
 
 
 def test_safe_json():

@@ -1,5 +1,5 @@
 import pytest
-from smartutils import get
+from pyquicktools import get
 
 
 def test_get_success():

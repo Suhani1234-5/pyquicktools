@@ -9,12 +9,12 @@ DEFAULT_RETRY_STATUS = {429, 500, 502, 503, 504}
 
 # ------------------ LOGGER ------------------
 def _get_logger(log_file=None):
-    if os.getenv("SMARTUTILS_LOG", "1") != "1":
-        logger = logging.getLogger("smartutils.http")
+    if os.getenv("PYQUICKTOOLS_LOG", "1") != "1":
+        logger = logging.getLogger("pyquicktools.http")
         logger.addHandler(logging.NullHandler())
         return logger
 
-    logger = logging.getLogger("smartutils.http")
+    logger = logging.getLogger("pyquicktools.http")
 
     if logger.handlers:
         return logger

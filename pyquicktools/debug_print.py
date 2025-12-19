@@ -16,7 +16,7 @@ def dprint(*args, prefix="debug", show_location=True, color="cyan"):
     """
     Debug print with variable names, values, color and source location
     """
-    if os.getenv("SMARTUTILS_DEBUG", "1") != "1":
+    if os.getenv("PYQUICKTOOLS_DEBUG", "1") != "1":
         return
 
     frame = inspect.currentframe().f_back
