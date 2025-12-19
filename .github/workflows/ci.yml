@@ -24,4 +24,4 @@ jobs:
 
       - name: Run doctor CLI
         run: |
-          python -m smartutils doctor
+          python -m pyquicktools doctor
