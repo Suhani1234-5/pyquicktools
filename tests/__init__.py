@@ -1,4 +1,4 @@
-from smartutils import dprint
+from pyquicktools import dprint
 
 name = "Suhani"
 age = 20

@@ -1,4 +1,4 @@
-from smartutils import dprint
+from pyquicktools import dprint
 
 
 def test_dprint_runs():

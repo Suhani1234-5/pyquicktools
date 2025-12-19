@@ -1,13 +1,12 @@
-# smartutils
+#  pyquicktools
 
 <div align="center">
 
-![PyPI Version](https://img.shields.io/pypi/v/smartutils?color=blue&style=flat-square)
-![Python Versions](https://img.shields.io/pypi/pyversions/smartutils?style=flat-square)
-![License](https://img.shields.io/pypi/l/smartutils?style=flat-square)
-![GitHub Stars](https://img.shields.io/github/stars/suhani1234-5/smartutils?style=flat-square)
-![Downloads](https://static.pepy.tech/personalized-badge/smartutils?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)
-
+![PyPI Version](https://img.shields.io/pypi/v/pyquicktools?color=blue&style=flat-square)
+![Python Versions](https://img.shields.io/pypi/pyversions/pyquicktools?style=flat-square)
+![License](https://img.shields.io/pypi/l/pyquicktools?style=flat-square)
+![GitHub Stars](https://img.shields.io/github/stars/Suhani1234-5/pyquicktools?style=flat-square)
+![Downloads](https://static.pepy.tech/personalized-badge/pyquicktools?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)
 
 **The Python utility toolbox you didn't know you needed — until now.**
 
@@ -15,7 +14,7 @@
 
  **Perfect for GSoC, open-source contributors, backend engineers & interview projects**
 
- Built with **real-world backend failures** in mind — not toy examples.
+Built with **real-world backend failures** in mind — not toy examples.
 
 [Installation](#-installation) • [Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Contributing](#-contributing)
 
@@ -23,24 +22,24 @@
 
 ---
 
-##  Why smartutils?
+##  Why pyquicktools?
 
-Stop installing 5+ packages for basic Python tasks. **smartutils** combines the most-needed utilities into one lightweight, blazing-fast package:
+Stop installing 5+ packages for basic Python tasks. **pyquicktools** combines the most-needed utilities into one lightweight, blazing-fast package:
 
- **Auto-retry HTTP requests** with exponential backoff  
+**Auto-retry HTTP requests** with exponential backoff  
  **Colorized debug printing** with file/line tracking  
- **Async retry support** for `aiohttp`  
+**Async retry support** for `aiohttp`  
  **Safe JSON parsing** that fixes common errors  
  **Minimal configuration** — works out of the box  
 
-**Before smartutils:**
+**Before pyquicktools:**
 ```bash
 pip install requests tenacity simplejson pprint colorama
 ```
 
-**After smartutils:**
+**After pyquicktools:**
 ```bash
-pip install smartutils
+pip install pyquicktools
 ```
 
 ---
@@ -48,7 +47,7 @@ pip install smartutils
 ## 📦 Installation
 
 ```bash
-pip install smartutils
+pip install pyquicktools
 ```
 
 **Requirements:** Python 3.8+
@@ -62,7 +61,7 @@ pip install smartutils
 Never lose data to flaky APIs again. Automatic retries with exponential backoff.
 
 ```python
-from smartutils import get, post
+from pyquicktools import get, post
 
 # Auto-retry on failure (default: 3 retries)
 response = get("https://api.example.com/data", retries=5, timeout=10)
@@ -90,7 +89,7 @@ response = post(
 Say goodbye to boring `print()` statements. Get beautiful, informative debug output.
 
 ```python
-from smartutils import dprint
+from pyquicktools import dprint
 
 user = {"name": "Suhani", "age": 22}
 items = ["laptop", "phone", "charger"]
@@ -104,7 +103,7 @@ dprint(user, items)
 ```
 
 **Features:**
-- **Color-coded** output (variables in cyan, values in green)
+-  **Color-coded** output (variables in cyan, values in green)
 -  **Automatic file + line number** tracking
 -  **Named arguments** shown clearly
 -  **Minimal configuration** — just replace `print()` with `dprint()`
@@ -131,11 +130,11 @@ dprint(error_data, file=open("debug.log", "a"))
 Supercharge your async code with automatic retries.
 
 > ⚠️ **Note:** Async features require `aiohttp`.  
-> Install with: `pip install smartutils aiohttp`
+> Install with: `pip install pyquicktools aiohttp`
 
 ```python
 import asyncio
-from smartutils import async_get
+from pyquicktools import async_get
 
 async def fetch_data():
     # Auto-retry async requests
@@ -162,7 +161,7 @@ asyncio.run(fetch_data())
 Parse JSON that's almost-but-not-quite valid. Fixes common errors automatically.
 
 ```python
-from smartutils import load_json
+from pyquicktools import load_json
 
 # Handles trailing commas, comments, NaN, Infinity
 data = load_json("""
@@ -180,7 +179,7 @@ print(data["age"])  # Output: 22 (int, not string!)
 -  Trailing commas in arrays/objects
 -  JavaScript-style comments (`//` and `/* */`)
 -  `NaN` and `Infinity` values
--  Optional smart typecasting for numeric strings
+- Optional smart typecasting for numeric strings
 
 ---
 
@@ -189,7 +188,7 @@ print(data["age"])  # Output: 22 (int, not string!)
 ### Example 1: Resilient API Calls
 
 ```python
-from smartutils import get, dprint
+from pyquicktools import get, dprint
 
 try:
     response = get(
@@ -209,7 +208,7 @@ except Exception as e:
 
 ```python
 import asyncio
-from smartutils import async_get
+from pyquicktools import async_get
 
 async def fetch_multiple():
     urls = [
@@ -232,7 +231,7 @@ asyncio.run(fetch_multiple())
 ### Example 3: Parse Messy JSON
 
 ```python
-from smartutils import load_json
+from pyquicktools import load_json
 
 # From API response with comments
 messy_json = """
@@ -300,12 +299,12 @@ print(type(data["total"]))  # <class 'int'>
 
 ---
 
-## 🛠️ Advanced Usage
+##  Advanced Usage
 
 ### Custom Retry Strategy
 
 ```python
-from smartutils import get
+from pyquicktools import get
 
 response = get(
     "https://api.example.com/data",
@@ -321,7 +320,7 @@ response = get(
 ### Logging with dprint
 
 ```python
-from smartutils import dprint
+from pyquicktools import dprint
 
 # In production: disable colors for log files
 with open("debug.log", "a") as log_file:
@@ -343,31 +342,31 @@ We love contributions! Here's how to get started:
 ### Development Setup
 
 ```bash
-git clone https://github.com/Suhani1234-5/smartutils.git
-cd smartutils
+git clone https://github.com/Suhani1234-5/pyquicktools.git
+cd pyquicktools
 pip install -e ".[dev]"
 pytest
 ```
 
 ---
 
-##  License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-##  Star History
+## Star History
 
-If you find this project useful, please consider giving it a ⭐ on [GitHub](https://github.com/suhani1234-5/smartutils)!
+If you find this project useful, please consider giving it a ⭐ on [GitHub](https://github.com/Suhani1234-5/pyquicktools)!
 
 ---
 
-## 📧 Contact
+## Contact
 
 **Suhani Garg**  
 📧 suhanigarg59@gmail.com  
- [GitHub](https://github.com/Suhani1234-5)
+[GitHub](https://github.com/Suhani1234-5)
 
 ---
 
@@ -375,6 +374,6 @@ If you find this project useful, please consider giving it a ⭐ on [GitHub](htt
 
 **Made with ❤️ by Suhani Garg**
 
-[⬆ Back to Top](#-smartutils)
+[⬆ Back to Top](#-pyquicktools)
 
 </div>
